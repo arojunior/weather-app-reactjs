@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
-import HomeContainer from './components/HomeContainer';
+import HomeContainer from './pages/Home/HomeContainer';
 
 ReactDOM.render(
   <React.StrictMode>
