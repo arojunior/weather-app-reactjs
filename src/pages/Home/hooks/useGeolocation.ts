@@ -9,7 +9,6 @@ const getAddressByLatLong = (coords: any) => {
 
 const defaultSettings = {
   enableHighAccuracy: false,
-  timeout: 5000,
   maximumAge: 0,
 };
 
@@ -42,7 +41,7 @@ export const useGeolocation = (settings = defaultSettings) => {
     }
 
     geolocation.getCurrentPosition(onSuccess, onError, settings);
-  }, [navigator.geolocation]);
+  }, [settings]);
 
   return position;
 };
