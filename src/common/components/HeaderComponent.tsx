@@ -13,9 +13,9 @@ const MainWrapper = styled.div`
 const HeaderComponent = () => {
   return (
     <MainWrapper>
-      <AppBar position="static" color="primary">
+      <AppBar position="static">
         <Toolbar>
-          <Typography variant="h4" color="inherit">
+          <Typography variant="h6" color="inherit">
             Weather App
           </Typography>
         </Toolbar>

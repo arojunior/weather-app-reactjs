@@ -1,11 +1,15 @@
 import httpService from './httpService';
 
-export const getWetaherForecast = (query: string) =>
-  httpService.get(`/forecast/daily`, {
+export const getWetaherForecast = ({ latitude, longitude }: any) => {
+  if (!latitude || !longitude) {
+    return Promise.reject(Error(`Latitude and Longitude are required`));
+  }
+  return httpService.get(`/onecall`, {
     params: {
-      q: query,
+      lat: latitude,
+      lon: longitude,
+      exclude: `hourly,minutely`,
       appid: process.env.REACT_APP_API_KEY,
-      units: `metrics`,
-      cnt: 7, // number of days returned (from 1 to 16)
     },
   });
+};

@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import { getWetaherForecast } from '../../../services/openWeatherService';
-import { berlinResponse } from '../../../common/infrastructure/mockedResponses';
 
-export const useForecast = (query: string) => {
-  const [forecast, setForecast] = useState(berlinResponse);
+export const useForecast = ({ latitude, longitude }: any) => {
+  const [forecast, setForecast] = useState(null);
 
   useEffect(() => {
-    getWetaherForecast(query)
-      .then(({ data }) => {
-        setForecast(data);
-      })
-      .catch((error) => {
-        console.log(`Error getting forecast`, error);
-      });
-  }, [query]);
+    if (latitude && longitude) {
+      getWetaherForecast({ latitude, longitude })
+        .then(({ data }) => {
+          setForecast(data);
+        })
+        .catch((error) => {
+          console.log(`Error getting forecast`, error);
+        });
+    }
+  }, [latitude, longitude]);
 
   return forecast;
 };
