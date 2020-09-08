@@ -10,6 +10,8 @@ yarn && yarn start
 
 **Allow geolocation permission, please**
 
+![Alt text](src/assets/images/screenshot-readme.png?raw=true "Screenshot")
+
 ### Disclaimer
 
 I had to take some shortcuts due the maximum time mentioned to be spent.
