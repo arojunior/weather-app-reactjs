@@ -8,6 +8,8 @@
 yarn && yarn start
 ```
 
+**Allow geolocation permission, please**
+
 ### Disclaimer
 
 I had to take some shortcuts due the maximum time mentioned to be spent.
