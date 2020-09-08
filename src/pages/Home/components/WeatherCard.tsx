@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import CurrentWeather from './CurrentWeather';
 import WeatherDetails from './WeatherDetails';
 import WeeklyWeather from './WeeklyWeather';
-import { takeFirst } from '../../../common/infrastructure/utils';
+import { takeFirst, toDate } from '../../../common/infrastructure/utils';
 
 const CustomCard = styled(Card)`
   min-width: 275px;
@@ -20,7 +20,7 @@ const CurrentWheaterWrapper = styled.div`
 `;
 
 const WeatherCard = ({ forecast, position }: any) => {
-  const today = new Date(forecast.current.dt);
+  const today = toDate(forecast.current.dt);
   const { description } = takeFirst(forecast.current.weather);
 
   return (
