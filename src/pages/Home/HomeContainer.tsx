@@ -6,7 +6,7 @@ const HomeContainer = () => {
   const forecast = useForecast(`Berlin`);
 
   console.log(`forecast`, forecast);
-  return <HomeComponent />;
+  return <HomeComponent forecast={forecast} />;
 };
 
 export default HomeContainer;
